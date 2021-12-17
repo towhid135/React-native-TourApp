@@ -1,0 +1,10 @@
+When we take an image using expo camera, the expo stores the image in a temporary storage (cache).
+For that reason when we close the app the image will erase from its cache. So we need to store the
+image on a permanent storage. By default each project in an expo app has a dedicated file system
+for it. Inside that file system there is a local file system. Inside that local file system there is
+a "Document Directory" it can store an image permanently. For that reason we need to store the image
+in that "Document Directory" using expo file system.
+
+When we create a database using "SQLite.openDatabase()", by default the database is created to the
+"Document Directory". So we can easily take the image path from the "Document Directory" and easily
+store it to an attribute of a table of the database.

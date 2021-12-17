@@ -36,7 +36,8 @@
     "redux-thunk": "^2.3.0",
     "validator": "^13.6.0",
     "expo-image-picker": "~11.0.3",
-    "expo-file-system": "~13.0.3"
+    "expo-file-system": "~13.0.3",
+    "expo-sqlite": "~10.0.3"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

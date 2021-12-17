@@ -6,6 +6,14 @@ import {createStore,combineReducers,applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
 import ReduxThunk from 'redux-thunk';
 import PlacesReducer from './store/reducers/Places-reducer';
+import { init } from './sqliteDB/db';
+
+init().then(()=>{
+  console.log('database initialized successfully')
+}).catch((err) =>{
+  console.log('initializing db failed');
+  console.log('db error',err);
+})
 
 export default function App() {
 
