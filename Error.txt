@@ -1,0 +1,4 @@
+# Error: fontFamily "ionicons" is not a system font.
+Solution: If we update expo cli then we have to run "npm install expo-cli --global" before creating
+a project. If we create the project using "expo init --" then vector icon is installed by default.
+We do not need to install it using npm command.

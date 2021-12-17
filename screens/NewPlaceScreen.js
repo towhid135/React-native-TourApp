@@ -1,5 +1,7 @@
 import React,{useState} from 'react';
 import Color from '../constants/Color';
+import ImgPicker from '../components/ImageSelector';
+
 import {
     View,
     Text,
@@ -12,13 +14,17 @@ import { useDispatch } from 'react-redux';
 import * as placesActions from '../store/actions/Places-action'
 const NewPlaceScreen = props =>{
     const dispatch = useDispatch();
+    const [selectedImage,setSelectedImage] = useState();
     const [textValue,setTextValue] = useState('');
     const textInputHandler = text =>{
         setTextValue(text);
     }
     const savePlaceHandler = () =>{
-        dispatch(placesActions.addPlace(textValue));
+        dispatch(placesActions.addPlace(textValue,selectedImage));
         props.navigation.goBack();
+    }
+    const onImageTakeHandler = imageUri =>{
+        setSelectedImage(imageUri);
     }
     return(
         <ScrollView>
@@ -28,6 +34,9 @@ const NewPlaceScreen = props =>{
                 style={styles.textInput}
                 value= {textValue}
                 onChangeText={textInputHandler}
+                />
+                <ImgPicker 
+                 onImageTake = {onImageTakeHandler}
                 />
                 <Button 
                 title='Submit' 
