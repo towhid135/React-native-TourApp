@@ -26,9 +26,9 @@
     "react-native-gesture-handler": "^1.10.3",
     "react-native-loading-spinner-overlay": "^2.0.0",
     "react-native-paper": "^4.9.2",
-    "react-native-reanimated": "^2.2.2",
+    "react-native-reanimated": "~2.2.0",
     "react-native-safe-area-context": "^3.2.0",
-    "react-native-screens": "^3.4.0",
+    "react-native-screens": "~3.8.0",
     "react-navigation-animated-switch": "^0.6.4",
     "react-navigation-header-buttons": "^9.0.1",
     "react-redux": "^7.2.5",
@@ -37,7 +37,10 @@
     "validator": "^13.6.0",
     "expo-image-picker": "~11.0.3",
     "expo-file-system": "~13.0.3",
-    "expo-sqlite": "~10.0.3"
+    "expo-sqlite": "~10.0.3",
+    "expo-location": "~13.0.4",
+    "expo-permissions": "~13.0.3",
+    "react-native-maps": "0.28.1"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9"

@@ -1,6 +1,7 @@
-import React,{useState} from 'react';
+import React,{useState,useCallback} from 'react';
 import Color from '../constants/Color';
 import ImgPicker from '../components/ImageSelector';
+import LocationPicker from '../components/LocationPicker';
 
 import {
     View,
@@ -11,21 +12,31 @@ import {
     ScrollView
 } from 'react-native';
 import { useDispatch } from 'react-redux';
-import * as placesActions from '../store/actions/Places-action'
+import * as placesActions from '../store/actions/Places-action';
+
 const NewPlaceScreen = props =>{
     const dispatch = useDispatch();
     const [selectedImage,setSelectedImage] = useState();
     const [textValue,setTextValue] = useState('');
+    const [selectedLocation,setSelectedLocation] = useState();
     const textInputHandler = text =>{
         setTextValue(text);
     }
-    const savePlaceHandler = () =>{
-        dispatch(placesActions.addPlace(textValue,selectedImage));
-        props.navigation.goBack();
-    }
+
     const onImageTakeHandler = imageUri =>{
         setSelectedImage(imageUri);
     }
+
+    const locationPickedHandler = useCallback( location =>{
+        //console.log('location from new place',location);
+        setSelectedLocation(location);
+    },[])
+
+    const savePlaceHandler = () =>{
+        dispatch(placesActions.addPlace(textValue,selectedImage,selectedLocation));
+        props.navigation.goBack();
+    }
+
     return(
         <ScrollView>
             <View style={styles.form}>
@@ -37,6 +48,11 @@ const NewPlaceScreen = props =>{
                 />
                 <ImgPicker 
                  onImageTake = {onImageTakeHandler}
+                />
+                <LocationPicker
+                 navigation = {props.navigation}
+                 route = {props.route}
+                 onLocationPicked = {locationPickedHandler}
                 />
                 <Button 
                 title='Submit' 

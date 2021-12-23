@@ -52,3 +52,24 @@ export const insertPlace = (title,imageUri,address,lat,lng) => {
       })
     return promise;
 }
+
+export const fetchPlaces = () =>{
+    const promise = new Promise((resolve,reject) => {
+        
+        db.transaction((tx) => {
+            /* If we directly insert the values to the VALUES like "VALUES(title,imageUri...)" then there is
+            a probability of SQL injection. For that reason we have used placeholder (?). Each place holder
+            takes values from the third bracked sequentially*/
+            tx.executeSql('SELECT * FROM places',
+            [],
+            (_,result) => {
+                resolve(result);
+            },
+            (_,err) => {
+                reject(err);
+            }
+            );
+        })
+      })
+    return promise;
+}

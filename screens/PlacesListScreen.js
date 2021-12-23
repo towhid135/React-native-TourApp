@@ -1,4 +1,4 @@
-import React,{useLayoutEffect} from 'react';
+import React,{useLayoutEffect,useEffect} from 'react';
 import {
     View,
     Text,
@@ -9,9 +9,17 @@ import {
 import {CustomHeaderButton} from '../components/CustomHeaderButton'
 import {HeaderButtons,Item} from 'react-navigation-header-buttons';
 import PlaceItem from '../components/PlaceItem';
-import { useSelector } from 'react-redux';
+import { useSelector,useDispatch } from 'react-redux';
+import * as PlacesAction from '../store/actions/Places-action'
 
 const PlacesListScreen = props =>{
+
+    const dispatch = useDispatch();
+
+    useEffect(() =>{
+        dispatch(PlacesAction.fetchAllPlace());
+    },[dispatch])
+
     const places = useSelector((state) => state.places.places);
     useLayoutEffect(() =>{
         props.navigation.setOptions({
