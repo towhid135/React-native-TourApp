@@ -53,7 +53,6 @@ const PlacesListScreen = props =>{
                 props.navigation.navigate({
                     name:'PlaceDetailScreen',
                     params:{
-                        title: itemData.item.title,
                         id: itemData.item.id
                     }})
             }}

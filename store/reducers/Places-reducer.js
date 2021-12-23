@@ -10,12 +10,14 @@ export default (state=initialState,action) =>{
             const newPlace = new Place(
                 action.placeData.id.toString(),
                 action.placeData.title,
-                action.placeData.imageUri
+                action.placeData.imageUri,
+                action.placeData.lat,
+                action.placeData.lng
             )
         return {places: state.places.concat(newPlace)}
 
         case FETCH_PLACE:
-            return {places: action.places.map((item) => new Place(item.id.toString(),item.title,item.imageUri))}
+            return {places: action.places.map((item) => new Place(item.id.toString(),item.title,item.imageUri,item.lat,item.lng))}
 
         default:
             return state;

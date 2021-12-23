@@ -4,17 +4,56 @@ import {
     View,
     Text,
     StyleSheet,
-    TouchableOpacity
+    TouchableOpacity,
+    Alert
 } from 'react-native';
+import * as Location from 'expo-location';
 
 const MapScreen = props =>{
     const [render,setRender] = useState(false);
     var selectedLocation = useRef({lat:undefined,lng:undefined});
 
+    const verifyPermissions = async () =>{
+        const result = await Location.requestForegroundPermissionsAsync();
+        if(result.status !== 'granted'){
+            Alert.alert(
+                'Insufficient Permissions',
+                'You need to grant location permissions',
+                [{text:'Okay'}]
+                );
+            return false;
+        }
+        return true;
+    }
+
+    useEffect(()=>{
+        const getLocation = async () =>{
+        const hasPermission = await verifyPermissions();
+        if(!hasPermission) return;
+ 
+        try{
+             
+             const location = await Location.getCurrentPositionAsync({
+                 timeout: 5000
+             })
+             console.log('location from location picker',location);
+             selectedLocation.current = {
+                 lat: location.coords.latitude,
+                 lng: location.coords.longitude
+             };
+        }catch(err){
+            Alert.alert(
+                'Warning',"Couldn't fetch location please try again later",
+                [{text: 'Okay',style: 'destructive'}]
+            )
+        }
+    }
+    getLocation();
+  },[])
 
     const mapRegion = {
-        latitude: 37.78825,
-        longitude: -122.4324,
+        latitude: selectedLocation.current.lat,
+        longitude: selectedLocation.current.lng,
         latitudeDelta: 0.0922,
         longitudeDelta: 0.0421,
       }

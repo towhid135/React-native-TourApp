@@ -8,7 +8,7 @@ export const addPlace = (title,imageUri, location) =>{
     return async dispatch =>{
         const response = await fetch(`https://maps.googleapis.com/maps/api/geocode/json?latlng=${location.lat},${location.lng}&amp;key=${vars.googleApiKey}`);
         if(!response.ok){
-            console.log('error occurs on fetching address from addPlace action');
+            //console.log('error occurs on fetching address from addPlace action');
             return;
         }
 
@@ -39,7 +39,9 @@ export const addPlace = (title,imageUri, location) =>{
                     placeData: {
                         id: dbResult.insertId,
                         title: title,
-                        imageUri: newPath
+                        imageUri: newPath,
+                        lat: location.lat,
+                        lng: location.lng
                     }
                 }
             )
