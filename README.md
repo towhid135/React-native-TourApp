@@ -35,12 +35,12 @@ The objective of this project is to learn:
 
 Initial Page            |  Add Place          | Permission
 :-------------------------:|:-------------------------:|:-------------------------
-![](https://github.com/towhid135/React-Native-TODO-2/blob/main/Screenshot/Login.jpg)  |  ![](https://github.com/towhid135/React-Native-TODO-2/blob/main/Screenshot/Spinner-Login.jpg) |  ![](https://github.com/towhid135/React-Native-TODO-2/blob/main/Screenshot/Register.jpg)
+![](https://github.com/towhid135/React-native-TourApp/blob/main/ScreenShots/1.Initial-page.jpg)  |  ![](https://github.com/towhid135/React-native-TourApp/blob/main/ScreenShots/2.Add-new-place.jpg) |  ![](https://github.com/towhid135/React-native-TourApp/blob/main/ScreenShots/3.Permission.jpg)
 
 Capture Image             |  Edit Image         | Image View
 :-------------------------:|:-------------------------:|:-------------------------
-![](https://github.com/towhid135/React-Native-TODO-2/blob/main/Screenshot/Forgot%20pass.jpg) |  ![](https://github.com/towhid135/React-Native-TODO-2/blob/main/Screenshot/Notes%20Loading.jpg) |  ![](https://github.com/towhid135/React-Native-TODO-2/blob/main/Screenshot/Initial%20View.jpg)
+![](https://github.com/towhid135/React-native-TourApp/blob/main/ScreenShots/4.Capture-image.jpg) |  ![](https://github.com/towhid135/React-native-TourApp/blob/main/ScreenShots/5.Edit-Image.jpg) |  ![](https://github.com/towhid135/React-native-TourApp/blob/main/ScreenShots/6.Image-View.jpg)
 
 Pick Location     |  List of Places          | Saved Location
 :-------------------------:|:-------------------------:|:-------------------------
-![](https://github.com/towhid135/React-Native-TODO-2/blob/main/Screenshot/Home.jpg)  |  ![](https://github.com/towhid135/React-Native-TODO-2/blob/main/Screenshot/Add.jpg) |  ![](https://github.com/towhid135/React-Native-TODO-2/blob/main/Screenshot/Note%20Settings.jpg)
+![](https://github.com/towhid135/React-native-TourApp/blob/main/ScreenShots/7.Pick-location.jpg)  |  ![](https://github.com/towhid135/React-native-TourApp/blob/main/ScreenShots/8.List-of-places.jpg) |  ![](https://github.com/towhid135/React-native-TourApp/blob/main/ScreenShots/9.Saved-location.jpg)
