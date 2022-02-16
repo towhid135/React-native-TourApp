@@ -1,8 +1,9 @@
 {
   "expo": {
     "name": "Tour",
-    "slug": "Tour",
+    "slug": "Tour-App",
     "version": "1.0.0",
+    "description": "In this app user can save image of places along with their location on google map.",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {

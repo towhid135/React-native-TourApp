@@ -9,10 +9,10 @@ import PlacesReducer from './store/reducers/Places-reducer';
 import { init } from './sqliteDB/db';
 
 init().then(()=>{
-  console.log('database initialized successfully')
+  //console.log('database initialized successfully')
 }).catch((err) =>{
-  console.log('initializing db failed');
-  console.log('db error',err);
+  //console.log('initializing db failed');
+  //console.log('db error',err);
 })
 
 export default function App() {

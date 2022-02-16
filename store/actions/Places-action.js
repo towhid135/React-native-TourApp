@@ -14,7 +14,7 @@ export const addPlace = (title,imageUri, location) =>{
 
         const resData = await response.json();
         //const address = resData.results[0].formatted_address; 
-        console.log(resData);
+        //console.log(resData);
 
         const fileName = imageUri.split('/').pop();
         //console.log('file name', fileName);
@@ -47,7 +47,7 @@ export const addPlace = (title,imageUri, location) =>{
             )
 
         }catch(err){
-            console.log('error from places-action',err);
+            //console.log('error from places-action',err);
         }
     
     }

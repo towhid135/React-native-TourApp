@@ -36,7 +36,7 @@ const MapScreen = props =>{
              const location = await Location.getCurrentPositionAsync({
                  timeout: 5000
              })
-             console.log('location from location picker',location);
+             //console.log('location from location picker',location);
              selectedLocation.current = {
                  lat: location.coords.latitude,
                  lng: location.coords.longitude

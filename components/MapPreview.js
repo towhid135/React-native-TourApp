@@ -10,7 +10,7 @@ const MapPreview = props =>{
     try{
         if (props.location) imagePreviewUrl = `https://maps.googleapis.com/maps/api/staticmap?center=${props.location.lat},${props.location.lng}&zoom=13&size=400x200&maptype=roadmap&markers=color:red%7Clabel:A%7C${props.location.lat},${props.location.lng}&key=${Env.googleApiKey}`;
     }catch(err){
-        console.log('map image error: ',err);
+        //console.log('map image error: ',err);
     }
     //console.log(imagePreviewUrl);
     return (
